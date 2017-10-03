@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="multipleCtrl">
+  <head>
+    <meta charset="utf-8">
+    <title> Multiple controller </title>
+
+        <script type="text/javascript" src="angular.js"> </script>
+  </head>
+  <body>
+      <div class="" ng-controller="OuterController">
+        <div> Primitive: {{ name }} </div>
+        <div> Object: {{ person.name }} </div>
+        <div> Overriden Object: {{ personOverride.name }} </div>
+          <div ng-controller="InnerController">
+            <div>    Primitive : <input type="text" ng-model="name" > </div>
+            <div> Object : <input type="text" ng-model="person.name" > </div>
+            <div> Object Override : <input type="text" ng-model="personOverride.name" > </div>
+
+            <div> Primitive: {{ name }} </div>
+            <div> Object: {{ person.name }} </div>
+            <div> Object Overriden: {{ personOverride.name }} </div>
+          </div>
+      </div>
+
+      <script type="text/javascript" src="multipleController.module.js">  </script>
+  </body>
+</html>

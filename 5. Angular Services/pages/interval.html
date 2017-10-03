@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="services">
+  <head>
+    <meta charset="utf-8">
+    <title>  Angular Interval  </title>
+      <link rel="stylesheet" href="../lib/bootstrap.css" />
+      <script type="text/javascript" src="../lib/angular.js"> </script>
+  </head>
+  <body >
+      <div ng-controller="IntervalController as vm">
+          <div ng-include="headerUrl"> </div>
+
+           <div>
+               <div class="col-sm-6" >
+                    <button class="btn btn-warning" ng-click="cancel()"> Cancel</button>
+               </div>
+               <div class="col-sm-6" ng-repeat="line in vm.lines">
+                      <span ng-repeat="char in line| orderBy"> {{char.val }}</span>
+               </div>
+           </div>
+      </div>
+
+      <script type="text/javascript" src="../modules/services.module.js"> </script>
+      <script type="text/javascript" src="../services/interval.js"> </script>
+      <script type="text/javascript" src="../controllers/interval.controller.js"> </script>
+  </body>
+</html>

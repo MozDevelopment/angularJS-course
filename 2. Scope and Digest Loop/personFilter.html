@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="filterPerson">
+  <head>
+    <meta charset="utf-8">
+    <title>  Scope Events </title>
+      <script type="text/javascript" src="angular.js"> </script>
+  </head>
+  <body ng-app="eventsApp">
+      <div ng-controller="FilterController">
+           <input type="text" ng-model="name" > </br>
+           <button type="button" ng-disabled="!canAdd" ng-click="add()"> Add </button>
+           <input type="text" placeholder="filter" ng-model="filter"  >
+           <ul>
+              <li ng-repeat="person in filteredPeople"> {{person.name}} </li>
+           </ul>
+      </div>
+
+      <script type="text/javascript" src="personFilter.module.js"> </script>
+  </body>
+</html>

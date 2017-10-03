@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="destroyEvents">
+  <head>
+    <meta charset="utf-8">
+    <title>  Scope Events </title>
+      <script type="text/javascript" src="angular.js"> </script>
+  </head>
+  <body ng-app="eventsApp">
+      <div ng-controller="DestroyController">
+          <button type="button" name="button" ng-click="add()"> Add </button>
+          <button type="button" name="button" ng-click="destroy()"> Destroy </button>
+          <ul>
+              <li ng-repeat="item in list"> <span> {{ item.value }} </span> </li>
+          </ul>
+          <div ng-controller="InnerController"> Length {{ list.length }} </div>
+      </div>
+
+      <script type="text/javascript" src="addandDestroy.module.js"> </script>
+  </body>
+</html>

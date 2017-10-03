@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="services">
+  <head>
+    <meta charset="utf-8">
+    <title>  Angular  </title>
+      <link rel="stylesheet" href="../lib/bootstrap.css" />
+      <script type="text/javascript" src="../lib/angular.js"> </script>
+  </head>
+  <body >
+      <div ng-controller="ExceptionHandlerController">
+          <div ng-include="headerUrl"> </div>
+
+           <div class="form-group">
+               <button class="btn btn-danger" ng-click="oops()"> Throw Error </button>
+           </div>
+           <div class="form-group" ng-repeat="error in errors">
+                <div class="text text-error"> {{error}} </div>
+           </div>
+      </div>
+
+      <script type="text/javascript" src="../modules/services.module.js"> </script>
+      <script type="text/javascript" src="../controllers/exception-handler.controller.js"> </script>
+      <script type="text/javascript" src="../services/exceptionHandler.js"> </script>
+  </body>
+</html>

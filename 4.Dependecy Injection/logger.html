@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="logger">
+  <head>
+    <meta charset="utf-8">
+    <title>  Dependency Injection </title>
+      <script type="text/javascript" src="angular.js"> </script>
+  </head>
+  <body >
+      <div ng-controller="LoggerController">
+          <button type="button" ng-click="getcoursesMap()"> Get Courses </button>
+          <pre> {{ coursesMap | json }} </pre>
+      </div>
+
+      <!-- <script type="text/javascript" src="logger1.module.js"> </script> -->
+      <!-- <script type="text/javascript" src="logger2.module.js"> </script> -->
+      <!-- <script type="text/javascript" src="logger-injector.module.js"> </script> -->
+      <!-- <script type="text/javascript" src="logger-provider.module.js"> </script> -->
+      <script type="text/javascript" src="logger-decorator.module.js"> </script>
+  </body>
+</html>

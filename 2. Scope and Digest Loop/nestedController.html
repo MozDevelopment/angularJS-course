@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Multiple controller </title>
+
+    <script type="text/javascript" src="angular.js"> </script>
+  </head>
+  <body ng-app="multipleController">
+      <div class="" ng-controller="OuterController">
+          <span>{{a+b}}</span>
+        <div class="" ng-controller="InnerController">
+            <span>{{a+b}}</span>
+            <div class="" ng-controller="InnerMostController">
+                <span>{{a+b}}</span>
+            </div>
+        </div>
+      </div>
+
+      <script type="text/javascript" src="nestedControllers.module.js"> </script>
+  </body>
+</html>

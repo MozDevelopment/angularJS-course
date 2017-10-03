@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="services">
+  <head>
+    <meta charset="utf-8">
+    <title>  Angular Services </title>
+      <link rel="stylesheet" href="lib/bootstrap.css" />
+      <script type="text/javascript" src="lib/angular.js"> </script>
+  </head>
+  <body >
+      <div ng-controller="ServicesController">
+          <div ng-include="headerUrl"> </div>
+            <div class=""> Your current locale: {{ locale }} </div>
+
+          <div class="container-fluid">
+            <div class="row-fluid" ng-repeat="url in list">
+                    <div class="span1"> </div>
+                    <div class="span11"><a ng-click="go(url)" href=""> {{ url }}</a> </div>
+            </div>
+          </div>
+        </div>
+
+      <!-- <script type="text/javascript" src="logger1.module.js"> </script> -->
+      <!-- <script type="text/javascript" src="logger2.module.js"> </script> -->
+      <!-- <script type="text/javascript" src="logger-injector.module.js"> </script> -->
+      <!-- <script type="text/javascript" src="logger-provider.module.js"> </script> -->
+      <script type="text/javascript" src="modules/services.module.js"> </script>
+      <script type="text/javascript" src="controllers/services.controller.js"> </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="services">
+  <head>
+    <meta charset="utf-8">
+    <title>  Angular Parse Service </title>
+      <link rel="stylesheet" href="../lib/bootstrap.css" />
+      <script type="text/javascript" src="../lib/angular.js"> </script>
+      <script type="text/javascript" src="../modules/services.module.js"> </script>
+  </head>
+  <body >
+      <div class="form-horizontal col-sm-9" ng-controller="ParSeController">
+          <div ng-include="headerUrl"> </div>
+
+          <div class="form-group">
+              <label class="label label-default" >Model: </label>
+               {{json | json }}
+          </div>
+          <div class="form-group">
+              <label for="expression" class="label label-default"> Expression: </label>
+                    <input type="text"  data-ng-model="expression" >
+                    <button ng-click="parse()" class="btn btn-primary"> Parse </button>
+          </div>
+          <div class="form-group">
+              <label for="expression" class="label label-default"> Result: </label>
+               {{result}}
+          </div>
+        </div><!-- controller-->
+
+      <script type="text/javascript" src="../controllers/parse.controller.js"> </script>
+  </body>
+</html>
