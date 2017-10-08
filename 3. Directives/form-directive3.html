@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="directives">
+  <head>
+    <meta charset="utf-8">
+    <title>  Angular Directives </title>
+    <link rel="stylesheet" href="lib/bootstrap.css" />
+    <script type="text/javascript" src="../lib/angular.js"> </script>
+  </head>
+  <body>
+
+      <div class="container" ng-controller="formEventController as vm" novalidate>
+          <div class="col-md-offset-1 col-md-4">
+              <form role="form" name="userForm" class="form-horizontal">
+                  <div class="form-group" ng-class="{'has-error': userForm.emailAddress.$invalid}">
+                      <label for="emailAddress" class="label">Email Address: </label>
+                      <input type="email" name="emailAddress" class="form-control"
+                      placeholder="Enter your email address." ng-model="vm.user.emailAddress"
+                      ng-minlength="4" ng-maxlength="20" ng-pattern=""
+                      required>
+
+                      <p class="help-block" ng-show="userForm.emailAddress.$error.required">
+                        Email Address is Required </p>
+                      <p class="help-block" ng-show="userForm.emailAddress.$error.email">
+                        Email Address is an invalid
+                      </p>
+                      <p class="help-block" ng-show="userForm.emailAddress.$error.minlength">
+                        The field should not be less than 4
+                      </p>
+                      <p class="help-block" ng-show="userForm.emailAddress.$error.maxlength">
+                        The field should not be greater than 25
+                      </p>
+                  </div>
+                  <div class="form-group" ng-class="{'has-error': userForm.telephone.$invalid}">
+                      <label for="telephone" class="label">Phone number: </label>
+                      <input type="email" name="telephone" class="form-control"
+                      placeholder="Enter your phone number." ng-model="vm.user.telephone"
+                      ng-minlength="4" ng-maxlength="20" ng-pattern="/\b\d{3}[-.]?\d{3}[-.]?\d{4}\b/"
+                      required>
+
+                      <p class="help-block" ng-show="userForm.telephone.$error.pattern">
+                        Telephone number pattern is wrong </p>
+                  </div>
+
+                  <div class="form-group">
+                      <button class="btn btn-primary" ng-click="vm.saveChanges()"> Save</button>
+                      <button class="btn btn-warning" ng-click="vm.cancelChanges()"> Cancel </button>
+                      <button class="btn btn-info" ng-click="vm.cleanField()"
+                      ng-disabled="!userForm.$dirty || userForm.$invalid" > Clean</button>
+                  </div>
+              </form>
+              <div class="warning">
+                  {{vm.user.message}}
+              </div>
+          </div>
+          <pre> {{ userForm.telephone | json }}</pre>
+      </div>
+
+      <script type="text/javascript" src="modules/directives.module.js"> </script>
+      <script type="text/javascript" src="controllers/form-events.controller.js">
+
+      </script>
+  </body>
+</html>

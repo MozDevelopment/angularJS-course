@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="directives">
+  <head>
+    <meta charset="utf-8">
+    <title>  Angular Form Select </title>
+    <link rel="stylesheet" href="../lib/bootstrap.css" />
+    <script type="text/javascript" src="../lib/angular.js"> </script>
+
+  </head>
+
+<body>
+    <div class="container" ng-controller="formSelectController as vm">
+        <div class="col-md-offset-1 col-md-4">
+            <form name="selectForm" role="form" class="form-horizontal" novalidate >
+                <div class="form-group">
+                        <label for="selectValue" class="label label-default"> Select Value: </label>
+                        <select name="selectValue" id="selectValue" ng-model="vm.data.selectedValue"
+                          ng-options="obj.name for obj in vm.objData.allValues track by obj.id"> </select>
+                        <p> Value Selected is: {{ vm.data.selectedValue}}</p>
+                </div>
+                <div>
+                  <label for="selectValue" class="label label-default"> Select Id: </label>
+                  <select name="selectValue" id="selectValue" ng-model="vm.data.selectedId"
+                    ng-options="obj.id for obj in vm.objData.allValues track by obj.id"> </select>
+                  <p>  Id Selected is: {{ vm.data.selectedId}}</p>
+                </div>
+                <div>
+                  <label for="selectValue" class="label label-default"> View Name Select Id: </label>
+                  <select name="selectValue" id="selectValue" ng-model="vm.data.viewId">
+                    <option ng-repeat="obj in vm.objData.allValues" value="{{obj.id}}">  {{obj.name}}
+                     </option>
+                  </select>
+                  <p>  View Name, Select Id: {{ vm.data.viewId}}</p>
+                </div>
+                <div>
+                  <label for="selectValue" class="label label-default"> Group By Type: </label>
+                  <select name="selectValue" id="selectValue" ng-model="vm.data.groupId"
+                    ng-options="obj.id as obj.name group by obj.type for obj in vm.objData.allValues">
+                    <!-- <option ng-repeat="obj in vm.objData.allValues" value="{{obj.id}}">  {{obj.name}}
+                     </option> -->
+                  </select>
+                  <p>  View Name, Select Id: {{ vm.data.groupId}}</p>
+                </div>
+                <div>
+                  <label for="selectValue" class="label label-default"> Group By Type: </label>
+                  <select name="selectValue" id="selectValue" ng-model="vm.data.groupName"
+                    ng-options="obj.name as obj.name group by obj.type for obj in vm.objData.allValues">
+                    <!-- <option ng-repeat="obj in vm.objData.allValues" value="{{obj.id}}">  {{obj.name}}
+                     </option> -->
+                  </select>
+                  <p>  View Name, Select Id: {{ vm.data.groupName}}</p>
+                </div>
+
+            </form>
+        </div>
+        <pre> {{ vm | json }}</pre>
+        <pre> {{ selectForm | json }}</pre>
+    </div>
+
+      <script type="text/javascript" src="modules/directives.module.js"> </script>
+      <script type="text/javascript" src="controllers/form-select.controller.js"> </script>
+  </body>
+</html>

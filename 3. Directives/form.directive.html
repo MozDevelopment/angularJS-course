@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="directives">
+  <head>
+    <meta charset="utf-8">
+    <title>  Angular Directives </title>
+      <script type="text/javascript" src="angular.js"> </script>
+
+          <div class="container" ng-controller="formEventController as vm">
+              <div class="col-md-offset-1 col-md-10">
+                  <form role="form" class="userForm">
+                      <div class="form-group" ng-class="{'has-error': userForm.emailAddress.$invalid}">
+                          <label for="emailAddress" class="label">Email Address: </label>
+                          <input type="text" name="emailAddress" class="form-control"
+                          placeholder="Enter yout email address." ng-model="vm.user.emailAddress" required>
+                          <p class="help-block" ng-show="userForm.emailAddress.$error.required">
+                            Email Address is Required </p>
+                          <p class="help-block" ng-show="userForm.emailAddress.$error.email">
+                            Email Address is an invalid
+                          </p>
+                      </div>
+
+                      <div class="form-group">
+                          <button class="btn btn-primary" ng-click="vm.saveChanges()"> Save</button>
+                          <button class="btn btn-warning" ng-click="vm.cancelChanges()"> Save</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+
+
+  </head>
+  </body>
+</html>

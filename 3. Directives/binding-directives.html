@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="directives">
+  <head>
+    <meta charset="utf-8">
+    <title>  Angular Form Select </title>
+    <link rel="stylesheet" href="../lib/bootstrap.css" />
+    <script type="text/javascript" src="../lib/angular.js"> </script>
+    <script type="text/javascript" src="../lib/angular-sanitize.js"> </script>
+
+  </head>
+
+<body>
+    <div class="container" ng-controller="bindingDirectiveController as vm">
+        <div class="col-md-offset-1 col-md-4">
+              <h4> Bound Text</h4>
+              <p> {{ vm.stringsData.textValue}}</p>
+              <p ng-bind="vm.stringsData.textValue"> </p>
+
+              <h4> Bound HTML as Text</h4>
+              <p> {{ vm.stringsData.htmlValue}}</p>
+              <p ng-bind="vm.stringsData.htmlValue"> </p>
+
+              <h4> Bound HTML as Text</h4>
+              <p> {{ vm.stringsData.htmlValue}}</p>
+              <p ng-bind-html="vm.stringsData.htmlValue"> </p>
+              <h4> Bound unsafe HTML  </h4>
+              <p ng-bind-html="vm.stringsData.unsafeHtmlValue"> </p>
+
+              <h4> Bound safe HTML  </h4>
+              <p ng-bind-html="vm.stringsData.safeHtmlValue"> </p>
+
+        </div>
+        <pre> {{ vm | json }}</pre>
+        <pre> {{ heightForm  | json }}</pre>
+        <pre> {{ vm.height2 | json }}</pre>
+
+    </div>
+
+      <script type="text/javascript" src="modules/directives.module.js"> </script>
+      <script type="text/javascript" src="controllers/binding-directives.controller.js"> </script>
+  </body>
+</html>

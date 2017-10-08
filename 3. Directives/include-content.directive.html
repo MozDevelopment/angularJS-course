@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="directives">
+  <head>
+    <meta charset="utf-8">
+    <title>  Angular Form Select </title>
+    <link rel="stylesheet" href="../lib/bootstrap.css" />
+    <script type="text/javascript" src="../lib/angular.js"> </script>
+    <script type="text/javascript" src="../lib/angular-sanitize.js"> </script>
+
+  </head>
+
+<body>
+    <div class="container" ng-controller="ContentController as vm">
+        <div class="col-md-offset-1 col-md-4">
+
+              <div ng-if="vm.data.showPageOne">
+                  <p> [ONE] First Page </p>
+              </div>
+              <div ng-if="!vm.data.showPageOne">
+                  <p> [TWO] Second Page </p>
+              </div>
+              <div>
+                  <input type="checkbox" ng-model="vm.data.showPageOne"> Show Page One
+              </div>
+
+              <div ng-switch on="vm.data.pageNumber">
+                <input type="radio" ng-model="vm.data.pageNumber" value="1"> Page One
+                <input type="radio" ng-model="vm.data.pageNumber" value="2"> Page Two
+                <input type="radio" ng-model="vm.data.pageNumber" value="else"> Something Else
+                  <div ng-switch-when="1">
+                      <p>[ONE] First Page</p>
+                  </div>
+                  <div ng-switch-when="2">
+                      <p>[TWO] Second Page</p>
+                  </div>
+                  <div ng-switch-default>
+                      <p>  None of the above </p>
+                  </div>
+
+                <div ng-include="vm.data.pageName"></div>
+              </div>
+
+        </div>
+        <pre> {{ vm | json }}</pre>
+        <pre> {{ heightForm  | json }}</pre>
+        <pre> {{ vm.height2 | json }}</pre>
+
+    </div>
+
+    <script type="text/ng-template" id="detail.page.one.html">
+      <div class="container">
+          <h3> Detail Page </h3>
+          <form name="userForm" role="form" class="col-md-3" novalidate >
+              <div class="form-group">
+                <label for="emailAddress">Email Address: </label>
+                <input type="email" name="emailAddress"
+                  required class="form-control" placeholder="Enter your email address."
+                  ng-model="ctrl.user.emailAddress">
+                  <p class="help-block" ng-show="userForm.emailAddress.$error.required">
+                    Email Address is Required.
+                  </p>
+                  <p class="help-block" ng-show="userForm.emailAddress.$error.email">
+                    Email Address is in an invalid form
+                  </p>
+              </div>
+          </form>
+        </div>
+    </script>
+
+      <script type="text/javascript" src="modules/directives.module.js"> </script>
+      <script type="text/javascript" src="controllers/include-content.controller.js"> </script>
+  </body>
+</html>

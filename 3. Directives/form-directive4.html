@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="directives">
+  <head>
+    <meta charset="utf-8">
+    <title>  Angular Form Select </title>
+    <link rel="stylesheet" href="../lib/bootstrap.css" />
+    <script type="text/javascript" src="../lib/angular.js"> </script>
+
+  </head>
+
+<body>
+    <div class="container" ng-controller="formSelectController as vm">
+        <div class="col-md-offset-1 col-md-4">
+            <form name="selectForm" role="form" class="form-horizontal" novalidate >
+                <div class="form-group">
+                        <label for="selectValue" class="label"> Select: </label>
+                        <select name="selectValue" ng-model="vm.data.selectedValue"
+                          ng-options="obj for obj in vm.stringsData.allValues"
+                        ></select>
+                </div>
+                <div>
+                  Value Selected is: {{ vm.data.selectedValue}}
+                </div>
+
+            </form>
+        </div>
+        <pre> {{ vm | json }}</pre>
+        <pre> {{ selectForm | json }}</pre>
+    </div>
+
+      <script type="text/javascript" src="modules/directives.module.js"> </script>
+      <script type="text/javascript" src="controllers/form-select.controller.js"> </script>
+  </body>
+</html>

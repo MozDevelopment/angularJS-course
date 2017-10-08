@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="directives">
+  <head>
+    <meta charset="utf-8">
+    <title>  Angular Form Select </title>
+    <link rel="stylesheet" href="../lib/bootstrap.css" />
+    <link rel="stylesheet" href="../css/master.css">
+    <script type="text/javascript" src="../lib/angular.js"> </script>
+    <script type="text/javascript" src="../lib/angular-sanitize.js"> </script>
+
+  </head>
+
+<body>
+    <div class="container" ng-controller="eventDirectives as vm">
+        <div class="col-md-offset-1 col-md-3">
+              <div >
+                  <label class="label label-default" for=""> Input </label>
+                  <input type="text" name="inputOne" ng-blur="vm.onBlur('inputOne')"
+                     ng-focus="vm.onFocus('inputOne')" >
+              </div>
+              <div >
+                  <label class="label label-default" for=""> Two </label>
+                  <input type="text" name="inputOne" ng-blur="vm.onBlur('inputTwo')"
+                     ng-focus="vm.onFocus('inputTwo')" >
+              </div>
+              <div class="eventsBox"
+                    ng-mousedown="vm.onMouse('Mouse Down')"
+                    ng-mouseenter="vm.onMouse('Mouse Enter ')"
+                    ng-mouseleave="vm.onMouse('Mouse Leave')"
+                    ng-mousemove="vm.onMouse('Mouse Move')"
+                    ng-mouseover="vm.onMouse('Mouse Over')"
+                    ng-mouseup="vm.onMouse('Mouse Up')" >
+                    Mouse Over
+              </div>
+              <p ng-repeat="message in vm.messages">
+                 {{ [message.id] }}  {{message.text}}
+              </p>
+
+              <div class="eventsBox"
+                    ng-keydown="vm.onKey($event)"
+                    ng-keyup="vm.onKey($event)"
+                    ng-keypress="vm.onKey($event)">
+                    <label class="label label-default"> Keys:  </label>
+                    <input type="text" ng-model="keysInput">
+              </div>
+        </div>
+        <pre class="pull-right"> {{ vm.messages | json }}</pre>
+        <pre class="pull-right"> {{ vm.msgNum | json }}</pre>
+
+    </div>
+
+      <script type="text/javascript" src="modules/directives.module.js"> </script>
+      <script type="text/javascript" src="controllers/event-directives.controller.js"> </script>
+  </body>
+</html>

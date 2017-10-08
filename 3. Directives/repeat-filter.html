@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="directives">
+  <head>
+    <meta charset="utf-8">
+    <title>  Angular Form Select </title>
+    <link rel="stylesheet" href="../lib/bootstrap.css" />
+    <link rel="stylesheet" href="../css/master.css">
+    <script type="text/javascript" src="../lib/angular.js"> </script>
+    <script type="text/javascript" src="../lib/angular-sanitize.js"> </script>
+
+  </head>
+
+<body>
+    <div class="container" ng-controller="formSelectController as vm">
+        <div class="col-md-offset-1 col-md-3">
+                          <h4> Filter by Color</h4>
+                          <table class="table table-stripped">
+                            <tr>
+                              <th></th>
+                              <th> Id </th>
+                              <th> Name </th>
+                              <th> Type </th>
+                            </tr>
+                            <tr ng-repeat="obj in vm.objData.allValues | filter: {type: 'Red'}">
+                                <td></td>
+                                <td>{{obj.id}}</td>
+                                <td>{{obj.name}}</td>
+                                <td>{{obj.type}}</td>
+                            </tr>
+                        </table>
+                          <h4> Filter by Order</h4>
+                        <table class="table table-stripped">
+                          <tr>
+                            <th></th>
+                            <th> Id </th>
+                            <th> Name </th>
+                            <th> Type </th>
+                          </tr>
+                          <tr ng-repeat="obj in vm.objData.allValues | orderBy: 'name'">
+                              <td></td>
+                              <td>{{obj.id}}</td>
+                              <td>{{obj.name}}</td>
+                              <td>{{obj.type}}</td>
+                          </tr>
+                      </table>
+                        <h4> Filter by Start and End</h4>
+                        <h4 ng-repeat-start="obj in vm.objData.allValues"> [Item {{obj.id}}]</h4>
+                        <p ng-repeat-end> {{obj.name}}</p>
+
+        </div>
+        <pre class="pull-right"> {{ vm.objData.allValues | json }}</pre>
+        <pre class="pull-right"> {{ vm.objData.allObjects | json }}</pre>
+
+    </div>
+
+      <script type="text/javascript" src="modules/directives.module.js"> </script>
+      <script type="text/javascript" src="controllers/form-select.controller.js"> </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="directives">
+  <head>
+    <meta charset="utf-8">
+    <title>  Angular Directives </title>
+      <link rel="stylesheet" href="lib/bootstrap.css">
+      <script type="text/javascript" src="../lib/angular.js"> </script>
+      <style media="screen">
+          form { padding-top: 30px; padding-bottom: 30px }
+          form.ng-valid {  background-color: lightgreen; }
+          form.ng-invalid {  background-color:  coral; }
+      </style>
+  </head>
+
+    <div class="container" ng-controller="formDirectiveController as ctrl">
+        <div class="col-md-offset-1 col-md-6">
+            <form name="userForm" role="form" novalidate >
+                <div class="form-group">
+                  <label for="emailAddress">Email Address: </label>
+                  <input type="email" name="emailAddress"
+                    required class="form-control" placeholder="Enter your email address."
+                    ng-model="ctrl.user.emailAddress">
+                    <p class="help-block" ng-show="userForm.emailAddress.$error.required">
+                      Email Address is Required.
+                    </p>
+                    <p class="help-block" ng-show="userForm.emailAddress.$error.email">
+                      Email Address is in an invalid form
+                    </p>
+                </div>
+                <div class="form-group" ng-class="{'has-error': userForm.email.$invalid}">
+                  <label for="email">Email: </label>
+                  <input type="email" name="email"
+                    required class="form-control" placeholder="Enter your email"
+                    ng-model="ctrl.user.email">
+                    <p class="help-block" ng-show="userForm.email.$error.required">
+                      Email is Required.
+                    </p>
+                    <p class="help-block" ng-show="userForm.email.$error.email">
+                      Email is in an invalid form
+                    </p>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-warning">Cancel</button>
+                    <button class="btn btn-primary">Save</button>
+                </div>
+            </form>
+            <pre> {{ ctrl | json }}</pre>
+            <pre> {{ userForm | json }}</pre>
+        </div>
+
+    </div>
+
+      <script type="text/javascript" src="modules/directives.module.js"> </script>
+      <script type="text/javascript" src="controllers/form.controller.js"> </script>
+  </body>
+</html>
