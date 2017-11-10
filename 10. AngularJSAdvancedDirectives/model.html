@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="directives">
+  <head>
+    <meta charset="utf-8">
+    <title>  Angular Form Select </title>
+    <link rel="stylesheet" href="../lib/bootstrap.css" />
+    <link rel="stylesheet" href="../css/master.css">
+
+    <script type="text/javascript" src="../lib/jquery-2.2.4.js"> </script>
+    <script type="text/javascript" src="../lib/angular.js"> </script>
+    <script type="text/javascript" src="../lib/angular-sanitize.js"> </script>
+    <script type="text/javascript" src="../lib/sugar.js"> </script>
+  </head>
+
+<body>
+    <div class="container" ng-controller="AttributeController as vm">
+        <div class="col-md-offset-1 col-md-6">
+          <form role="form">
+            <div class="form-group">
+              <label for="" class="label label-primary"> Data Value </label>
+              <input type="text"
+                  ng-model="vm.dateValue" model-example
+                  placeholder="Enter a value"
+                class="form-control">
+            </div>
+            <div class="form-group">
+              <span class="label label-success">Date Value:</span> {{vm.dateValue}}
+            </div>
+            <div class="form-group">
+              <span class="label label-danger">Formatteed Date Formatted:</span>
+                 {{vm.dateValue}}
+            </div>
+            <button class="btn btn-default" ng-click="vm.resetDate()">Reset</button>
+            <button class="btn btn-success" ng-click="today">Today</button>
+            <button class="btn btn-primary" ng-click="yesterday">Yesterday</button>
+            <button class="btn btn-warning" ng-click="nul">null</button>
+          </form>
+        </div>
+
+        <pre class="pull-right"> {{ vm.messages | json }}</pre>
+        <pre class="pull-right"> {{ vm.msgNum | json }}</pre>
+    </div>
+      <script type="text/javascript" src="/modules/directives.module.js"> </script>
+      <script type="text/javascript" src="/controllers/directives.controller.js"> </script>
+      <!-- <script type="text/javascript" src="/controllers/compile.controller.js"> </script> -->
+      <script type="text/javascript" src="/controllers/attribute.controller.js"> </script>
+      <!-- <script type="text/javascript" src="/directives/compile.directive.js"></script> -->
+      <script type="text/javascript" src="/directives/multiple.directive.js"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="directives">
+  <head>
+    <meta charset="utf-8">
+    <title>  Angular Form Select </title>
+    <link rel="stylesheet" href="../lib/bootstrap.css" />
+    <link rel="stylesheet" href="../css/master.css">
+
+    <script type="text/javascript" src="../lib/jquery-2.2.4.js"> </script>
+    <script type="text/javascript" src="../lib/angular.js"> </script>
+    <script type="text/javascript" src="../lib/angular-sanitize.js"> </script>
+
+  </head>
+
+<body>
+    <div class="container" ng-controller="AttributeController as vm">
+        <div class="col-md-offset-1 col-md-3">
+
+        </div>
+
+        <div class="pane panel-primary col-md-6">
+          <div class="panel-heading"> Attributes Example </div>
+          <div class="panel-body">
+            <div attribute-three> Example A </div>
+            <div attribute-four> Example B </div>
+            <div attribute-five> Example C </div>
+          </div>
+        </div>
+        <div class="pane panel-info col-md-6">
+          <div class="panel-heading"> Attributes Example </div>
+          <div class="panel-body"> 
+              <div attribute-six my-watch="{{vm.modelValue}}">
+                    <p>working...</p>
+               </div>
+
+          </div>
+        </div>
+
+
+
+        <pre class="pull-right"> {{ vm.messages | json }}</pre>
+        <pre class="pull-right"> {{ vm.msgNum | json }}</pre>
+    </div>
+      <script type="text/javascript" src="/modules/directives.module.js"> </script>
+      <script type="text/javascript" src="/controllers/directives.controller.js"> </script>
+      <!-- <script type="text/javascript" src="/controllers/compile.controller.js"> </script> -->
+      <script type="text/javascript" src="/controllers/attribute.controller.js"> </script>
+
+      <!-- <script type="text/javascript" src="/directives/compile.directive.js"></script> -->
+      <script type="text/javascript" src="/directives/multiple.directive.js"></script>
+  </body>
+</html>

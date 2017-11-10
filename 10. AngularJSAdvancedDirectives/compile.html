@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html ng-app="directives">
+  <head>
+    <meta charset="utf-8">
+    <title>  Angular Form Select </title>
+    <link rel="stylesheet" href="../lib/bootstrap.css" />
+    <link rel="stylesheet" href="../css/master.css">
+
+    <script type="text/javascript" src="../lib/jquery-2.2.4.js"> </script>
+    <script type="text/javascript" src="../lib/angular.js"> </script>
+    <script type="text/javascript" src="../lib/angular-sanitize.js"> </script>
+
+  </head>
+
+<body>
+    <div class="container" ng-controller="CompileController as vm">
+        <div class="col-md-offset-1 col-md-3">
+
+        </div>
+
+        <div class="pane panel-primary col-md-6">
+          <div class="panel-heading"> Compile Simple Example </div>
+          <div class="panel-body">
+            <div compile-directive>   </div>
+          </div>
+        </div>
+
+        <!-- <div class="pane panel-primary col-md-6">
+          <div class="panel-heading"> </div>
+          <div class="panel-body">
+            <div ng-repeat="item in vm.messageList" >   </div>
+          </div>
+        </div> -->
+
+        <div class="pane panel-primary col-md-6">
+          <div class="panel-heading"> Append Example </div>
+          <div class="panel-body">
+            <div append-directive>
+                <p> Original  Text </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pane panel-info col-md-6">
+          <div class="panel-heading"> Styles Example Using Compile </div>
+          <div class="panel-body">
+            <div styles-directive>
+                <p> Original  Text </p>
+                <button class="btn"> Click Me! </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pane panel-warning col-md-6">
+          <div class="panel-heading"> Templates Example </div>
+          <div class="panel-body">
+            <div append-template class="bg-info">
+                <p> Original  Template </p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="pane panel-default col-md-6">
+          <div class="panel-heading"> Styles Example Using Link </div>
+          <div class="panel-body">
+            <div link-directive>
+                <p> Original  Text </p>
+                <button class="btn"> Click Me! </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pane panel-primary col-md-6">
+          <div class="panel-heading"> Styles Example Full DOM consctrution </div>
+          <div class="panel-body">
+            <div markup-directive>
+            </div>
+          </div>
+        </div>
+
+        <div class="pane panel-success col-md-6">
+          <div class="panel-heading"> Styles Example Full DOM Replacement </div>
+          <div class="panel-body">
+            <div replace-directive class="bg-info">
+
+            </div>
+          </div>
+        </div>
+
+        <pre class="pull-right"> {{ vm.messages | json }}</pre>
+        <pre class="pull-right"> {{ vm.msgNum | json }}</pre>
+    </div>
+      <script type="text/javascript" src="/modules/directives.module.js"> </script>
+      <script type="text/javascript" src="/controllers/directives.controller.js"> </script>
+      <script type="text/javascript" src="/controllers/compile.controller.js"> </script>
+
+      <script type="text/javascript" src="/directives/compile.directive.js"></script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="filters">
+  <head>
+    <meta charset="utf-8">
+    <title>  AngularJS Filters </title>
+    <link rel="stylesheet" href="../lib/bootstrap.css" />
+    <link rel="stylesheet" href="../css/master.css">
+
+    <script type="text/javascript" src="../lib/jquery-2.2.4.js"> </script>
+    <script type="text/javascript" src="../lib/angular.js"> </script>
+    <script type="text/javascript" src="../lib/angular-sanitize.js"> </script>
+  </head>
+
+<body>
+    <div class="container" ng-controller="FilterController as vm">
+        <div class="col-md-offset-1 col-md-6">
+          <div> {{ vm.title }}</div> -
+          <div> {{vm.title |uppercase |limitTo: vm.limit }}</div> -
+          <div>  {{ vm.uppercaseTitle }} </div> -
+        </div>
+        <div>
+
+        </div>
+
+        <pre class="pull-right"> {{ vm | json }}</pre> 
+    </div>
+      <script type="text/javascript" src="/modules/filters.module.js"> </script>
+      <script type="text/javascript" src="/controllers/filters.controller.js"> </script>
+
+
+  </body>
+</html>

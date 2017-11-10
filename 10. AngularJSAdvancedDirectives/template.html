@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="directives">
+  <head>
+    <meta charset="utf-8">
+    <title>  Angular Form Select </title>
+    <link rel="stylesheet" href="../lib/bootstrap.css" />
+    <link rel="stylesheet" href="../css/master.css">
+    <script type="text/javascript" src="../lib/angular.js"> </script>
+    <script type="text/javascript" src="../lib/angular-sanitize.js"> </script>
+
+  </head>
+
+<body>
+    <div class="container" ng-controller="SimpleController as vm">
+        <div class="col-md-offset-1 col-md-3">
+              <div> {{vm.text}} </div>
+        </div>
+
+        <div class="col-md-offset-2">
+              <div template-directive>  </div>
+              <ol>
+                <li ng-repeat="item in ['One', 'Two', 'Three']"> {{item}}</li>
+              </ol>
+
+        </div>
+        <pre class="pull-right"> {{ vm.messages | json }}</pre>
+        <pre class="pull-right"> {{ vm.msgNum | json }}</pre>
+    </div>
+
+      <script type="text/ng-template" id="hello-world.html" >
+          <div > Hellow World! (from template cache) </div>
+      </script>
+
+      <script type="text/javascript" src="/modules/directives.module.js"> </script>
+      <script type="text/javascript" src="/controllers/directives.controller.js"> </script>
+      <script type="text/javascript" src="/directives/template.directive.js"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+/*div {
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+}*/
+
+table {
+    padding: 25px;
+    margin: 25px;
+}
+
+pre {
+  padding: 20px 20px;
+}
+
+body {
+  padding: 20px 20px;
+}
+
+div {
+  padding: 1px 1px;
+}
+
+.eventsBox {
+  margin: 5px 5px;
+  border-color: : blue; 
+  border-width: 5px;
+  border-style: solid;
+}
